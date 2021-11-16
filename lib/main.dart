@@ -5,6 +5,8 @@ import 'package:flutter_circular_timer/info.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -28,7 +30,7 @@ class DemoApp extends StatefulWidget {
 class _DemoAppState extends State<DemoApp> {
   CountDownController _controller = CountDownController();
 
-  int _duration = 1500; //Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+  int _duration = 3; //Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 
   bool _isPause = false;
 
@@ -140,6 +142,20 @@ class _DemoAppState extends State<DemoApp> {
                       isTimerTextShown: true,
                       isReverse: true,
                       onComplete: () {
+                        FlutterRingtonePlayer.play(
+                          //Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                          android: AndroidSounds
+                              .notification, //Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                          ios: IosSounds
+                              .glass, //Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                          looping:
+                              false, // Android only - API >= 28 /Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                          volume:
+                              0.1, // Android only - API >= 28/Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                          asAlarm:
+                              false, // Android only - all APIs/Gabriela aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                        );
+
                         Alert(
                                 context: context,
                                 title: 'Done',

@@ -33,6 +33,7 @@ dependencies:
   circular_countdown_timer: ^0.2.0
   rflutter_alert: ^2.0.4
   provider: ^6.0.1
+  flutter_ringtone_player: ^3.1.0
 
 dev_dependencies:
   flutter_test:
